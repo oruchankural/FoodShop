@@ -1,0 +1,28 @@
+﻿@model FoodShop.Data.Models.Category
+@{
+    ViewData["Title"] = "CategoryGet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Category Update</h2>
+<br />
+@using (Html.BeginForm("CategoryUpdate", "Category", FormMethod.Post))
+{
+    <div class="hidden">
+        @Html.LabelFor(x => x.CategoryID)
+        @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" })
+    </div>
+    <hr />
+
+    @Html.LabelFor(x => x.CategoryName)
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CategoryName, "", new { @style = "color:red" })
+    <hr />
+    @Html.LabelFor(x => x.CategoryDesc)
+    @Html.TextBoxFor(x => x.CategoryDesc, new { @class = "form-control" })
+    <hr />
+    <button class="btn-sm btn-primary">Update</button>
+
+
+}
+
